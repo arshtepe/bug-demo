@@ -1,0 +1,14 @@
+query OrdersQuery($first: Int, $after: String, $last: Int, $query: String, $reverse: Boolean) {
+    orders(first: $first, after: $after, last: $last, query: $query, reverse: $reverse) {
+        edges {
+            node {
+                cancelReason
+            }
+            cursor
+        }
+        pageInfo {
+            hasNextPage
+            hasPreviousPage
+        }
+    }
+}
